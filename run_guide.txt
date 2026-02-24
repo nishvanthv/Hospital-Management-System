@@ -1,0 +1,90 @@
+✅ STEP 1 — Start Oracle Database
+🔹 Option A (Recommended Way)
+
+Press:
+
+Windows + R
+
+
+Type:
+
+services.msc
+
+
+Press Enter.
+
+Find services like:
+
+OracleServiceXE
+OracleOraDB21HomeTNSListener
+
+
+Right-click → Start (if not running)
+
+If status shows “Running” already → good.
+
+🔹 Quick Test
+
+Open SQL Developer.
+
+Click your HMS connection → Test → Connect.
+
+If it connects → Oracle is running.
+
+✅ STEP 2 — Start Backend Server
+
+Open VS Code.
+
+Open your:
+
+Hospital-Management-System/backend
+
+
+Open terminal inside backend folder.
+
+Run:
+
+node server.js
+
+
+You must see:
+
+Server running on http://localhost:3000
+
+
+Keep this terminal open.
+
+Do NOT close it.
+
+✅ STEP 3 — Open Frontend
+
+Go to your frontend folder.
+
+Open:
+
+patients.html
+
+
+Best way:
+
+Use Live Server extension in VS Code.
+
+Right click patients.html → Open with Live Server
+
+OR simply double-click file to open in browser.
+
+🔎 Quick Health Check
+
+Test in browser:
+
+http://localhost:3000/patients
+
+
+If it shows data → backend & Oracle working.
+
+Then open:
+
+appointments.html
+
+
+Everything should load.

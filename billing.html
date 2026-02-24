@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-dark bg-dark p-3">
+    <a href="dashboard.html" class="text-white">Dashboard</a>
+    <a href="patients.html" class="text-white">Patients</a>
+    <a href="doctors.html" class="text-white">Doctors</a>
+    <a href="appointments.html" class="text-white">Appointments</a>
+    <a href="billing.html" class="text-white">Billing</a>
+</nav>
+
+<div class="container mt-4">
+
+    <h3>Generate Bill</h3>
+
+    <!-- Billing Form -->
+    <select id="billPatient" class="form-control mb-2">
+        <option value="">Select Patient</option>
+    </select>
+
+    <input type="number" id="consultFee" placeholder="Consultation Fee" class="form-control mb-2" oninput="calculateLiveTotal()">
+
+    <input type="number" id="medicineCost" placeholder="Medicine Cost" class="form-control mb-2" oninput="calculateLiveTotal()">
+
+    <input type="number" id="otherCost" placeholder="Other Charges" class="form-control mb-2" oninput="calculateLiveTotal()">
+
+    <h5>Total: ₹ <span id="liveTotal">0</span></h5>
+
+    <button class="btn btn-primary mb-3" onclick="generateBill()">Generate Bill</button>
+
+    <!-- Billing Table -->
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Total Amount</th>
+                <th>Bill Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="billTable">
+        </tbody>
+    </table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
